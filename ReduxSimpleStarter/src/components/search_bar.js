@@ -5,16 +5,29 @@ import React, {Component} from "react";
 // };
 
 
-class SearchBar extends Component{
-    render(){
-        return <input type="text" onChange={this.onInputChange}/>
+class SearchBar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {term: ''};
+    }
+
+    render() {
+        // return <input type="text" onChange={event => this.setState({term: event.target.value})}/>
+        return (
+            <div>
+                <input type="text" value={this.state.term} onChange={e => this.onInputChange(e)}/>
+
+                Value of input {this.state.term}
+            </div>
+        );
     };
 
     onInputChange(event) {
-        console.log(event);
+        this.setState({term: event.target.value});
     }
 }
 
 // anladığım kadarıyla tek bir değişkeni export edebiliyorsun
 // zati her component tek bir dosyada duruyor
 export default SearchBar;
+
