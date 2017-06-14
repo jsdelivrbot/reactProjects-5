@@ -11,13 +11,14 @@ class SearchBar extends Component {
         this.state = {term: ''};
     }
 
+    // class componentlerde props u herhangi bir yerde kullanabiliyorsun
     render() {
         // return <input type="text" onChange={event => this.setState({term: event.target.value})}/>
         return (
             <div>
                 <input type="text" value={this.state.term} onChange={e => this.onInputChange(e)}/>
 
-                Value of input {this.state.term}
+                {/*Value of input {this.state.term}*/}
             </div>
         );
     };
