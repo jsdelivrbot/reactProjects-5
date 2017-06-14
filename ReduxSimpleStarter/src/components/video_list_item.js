@@ -10,10 +10,11 @@ import React from "react";
 //short hand for props // ES6 syntax
 // parametre olarak fonksiyona {} içinde geçtiğin değer içerde
 // const video = props.video; yapmış gibi kullanıyorsun
-const VideoListItem = ({video}) => {
+const VideoListItem = ({video, onVideoSelect}) => {
     const imageUrl = video.snippet.thumbnails.default.url;
     return (
-        <li className="list-group-item">
+        // run callback function injected
+        <li onClick={() =>onVideoSelect(video)} className="list-group-item">
             <div className="video-list media">
                 <div className="media-left">
                     <img src={imageUrl} alt="" className="media-object"/>

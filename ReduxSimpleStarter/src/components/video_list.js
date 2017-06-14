@@ -6,7 +6,11 @@ const VideoList = (props) => {
     // refaktor ederken classlarda props u o yüzden this.props olarak refaktor et
 
     const videoItems = props.videos.map((video) =>{
-        return <VideoListItem key={video.etag} video = {video}/>
+        return <VideoListItem
+            key={video.etag}
+            video = {video}
+            onVideoSelect = {props.onVideoSelect}
+        />
     });
 
     return (
