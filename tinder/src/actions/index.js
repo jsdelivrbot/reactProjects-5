@@ -3,6 +3,6 @@ export function selectBook(book) {
     // an object with type property
     return {
         type: 'BOOK_SELECTED',
-        payload: <book></book>
+        payload: book
     };
 }
