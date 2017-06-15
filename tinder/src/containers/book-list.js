@@ -15,7 +15,10 @@ class BookList extends Component {
     renderList() {
         return this.props.books.map((book) => {
             return (
-                <li key={book.title} className="list-group-item"> {book.title}</li>
+                <li onClick={() => this.props.selectBook(book)}
+                    key={book.title}
+                    className="list-group-item"> {book.title}
+                </li>
             );
         });
     }
@@ -28,8 +31,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    // selectBook state ine selectBook actionCreator fonksiyonunu register ediyor.
-    // daha sonra ilgili reducer digest edip return ettiği objeyi selectBook state ine set etmiş olacak
+    // key olan selectBook için bir tane this.props.selectBook oluşturuluyor
     return bindActionCreators({selectBook: selectBook}, dispatch);
 }
 
