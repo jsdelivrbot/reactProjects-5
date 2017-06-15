@@ -4,6 +4,8 @@ import ActiveBook from './reducer_active_book';
 
 const rootReducer = combineReducers({
     books: BookReducer,
+    // activeBook redux store state olarak tutulur,
+    // yani ActiveBook reducer activeBook state i oluşturur
     activeBook: ActiveBook
 });
 
